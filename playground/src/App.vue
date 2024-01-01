@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-  import { MonacoEditor } from 'vue-monaco-editor'
+  import { MonacoEditor } from '@vue-monaco/editor'
   </script>
 
 <template>

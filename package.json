@@ -6,7 +6,7 @@
   "description": "vue monaco editor monorepo",
   "license": "MIT",
   "scripts": {
-    "play": "npm -C playground run dev",
+    "dev": "npm -C playground run dev",
     "build": "pnpm -r --parallel run stub",
     "lint": "eslint .",
     "release": "npm run build && bumpp -r && pnpm -r publish"

@@ -9,9 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vue-monaco/editor": "workspace:*",
     "monaco-editor": "^0.45.0",
-    "vue": "^3.3.13",
-    "vue-monaco-editor": "workspace:*"
+    "vue": "^3.3.13"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.6.0",
