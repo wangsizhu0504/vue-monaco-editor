@@ -1,0 +1,23 @@
+{
+  "name": "my-vue-app",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "monaco-editor": "^0.45.0",
+    "vue": "^3.3.13",
+    "vue-monaco-editor": "workspace:*"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.6.0",
+    "@vitejs/plugin-vue-jsx": "^3.1.0",
+    "typescript": "^5.3.3",
+    "vite": "^4.5.1",
+    "vue-tsc": "^1.8.27"
+  }
+}

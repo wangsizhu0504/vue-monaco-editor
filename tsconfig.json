@@ -1,20 +1,18 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "esnext",
     "jsx": "preserve",
-    "rootDir": "./src",
+    "lib": ["esnext", "dom"],
+    "useDefineForClassFields": true,
     "module": "esnext",
     "moduleResolution": "node",
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitThis": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "declaration": true,
-    "outDir": "./lib",
+    "resolveJsonModule": true,
+    "strict": true,
     "sourceMap": true,
-    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
     "skipLibCheck": true
   },
-  "include": ["./src"],
+  "include": ["packages"],
   "exclude": ["dist", "eslint.config.js"]
 }

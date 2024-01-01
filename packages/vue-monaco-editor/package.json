@@ -1,0 +1,65 @@
+{
+  "name": "@vue-monaco/editor",
+  "type": "module",
+  "version": "0.0.1",
+  "packageManager": "pnpm@8.6.12",
+  "description": "Monaco Editor for Vue - use the monaco-editor in Vue2/3 without needing to use plugins",
+  "license": "MIT",
+  "homepage": "https://github.com/wangsizhu0504/vue-monaco-editor#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wangsizhu0504/vue-monaco-editor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wangsizhu0504/vue-monaco-editor/issues"
+  },
+  "keywords": [
+    "monaco",
+    "editor",
+    "vue",
+    "vue2",
+    "vue3",
+    "vue-demi",
+    "vscode",
+    "code",
+    "text"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/es/index.js",
+      "require": "./dist/cjs/index.js"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./*"
+      ]
+    }
+  },
+  "files": [
+    "LICENSE",
+    "dist"
+  ],
+  "scripts": {
+    "stub": "rimraf lib && rollup -c",
+    "lint": "eslint .",
+    "test": "vitest"
+  },
+  "peerDependencies": {
+    "@vue/composition-api": ">=1.7.0",
+    "monaco-editor": ">=0.43.0",
+    "vue": ">=2.6.14 || >=3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@vue/composition-api": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "monaco-editor-loader": "workspace:*",
+    "vue-demi": "latest"
+  }
+}

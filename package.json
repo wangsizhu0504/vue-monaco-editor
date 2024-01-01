@@ -1,65 +1,29 @@
 {
-  "name": "vue-monaco-editor",
+  "name": "vue-monaco-monorepo",
   "type": "module",
   "version": "0.0.1",
   "packageManager": "pnpm@8.6.12",
-  "description": "",
+  "description": "vue monaco editor monorepo",
   "license": "MIT",
-  "homepage": "https://github.com/wangsizhu0504/vue-monaco-editor#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/wangsizhu0504/vue-monaco-editor.git"
-  },
-  "bugs": {
-    "url": "https://github.com/wangsizhu0504/vue-monaco-editor/issues"
-  },
-  "keywords": [
-    "vite",
-    "vue",
-    "monaco-editor"
-  ],
-  "main": "dist/index.cjs",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "typesVersions": {
-    "*": {
-      "*": [
-        "./dist/*",
-        "./*"
-      ]
-    }
-  },
-  "files": [
-    "dist"
-  ],
   "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch src",
-    "build:fix": "esno scripts/postbuild.ts",
-    "lint": "eslint .",
     "play": "npm -C playground run dev",
-    "prepublishOnly": "npm run build",
-    "release": "bumpp && npm publish",
-    "start": "esno src/index.ts",
-    "test": "vitest"
-  },
-  "peerDependencies": {
-    "monaco-editor": ">=0.44.0",
-    "vue": ">=3.3.0"
+    "build": "pnpm -r --parallel run stub",
+    "lint": "eslint .",
+    "release": "npm run build && bumpp -r && pnpm -r publish"
   },
   "devDependencies": {
     "@kriszu/eslint-config": "^3.1.4",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-terser": "^0.4.0",
     "@types/node": "^20.10.5",
     "bumpp": "^9.2.1",
-    "chalk": "^5.3.0",
+    "esbuild": "^0.17.11",
     "eslint": "^8.56.0",
-    "esno": "^4.0.0",
-    "fast-glob": "^3.3.2",
-    "monaco-editor": "^0.45.0",
-    "nodemon": "^3.0.2",
     "rimraf": "^5.0.5",
-    "tsup": "^8.0.1",
+    "rollup": "^3.17.2",
+    "rollup-plugin-dts": "^5.2.0",
+    "rollup-plugin-esbuild": "^5.0.0",
     "typescript": "^5.3.3",
-    "vue": "^3.3.13"
+    "vitest": "^1.1.0"
   }
 }
