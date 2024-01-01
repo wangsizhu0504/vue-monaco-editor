@@ -1,5 +1,5 @@
 {
-  "name": "@vue-monaco/editor-loader",
+  "name": "@vue-monaco/loader",
   "type": "module",
   "version": "0.0.1",
   "description": "the library aims to setup monaco editor into your browser",

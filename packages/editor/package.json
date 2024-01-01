@@ -59,7 +59,7 @@
     }
   },
   "dependencies": {
-    "monaco-editor-loader": "workspace:*",
+    "@vue-monaco/loader": "workspace:*",
     "vue-demi": "latest"
   }
 }

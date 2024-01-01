@@ -5,7 +5,6 @@ import {
   onMounted,
   onUnmounted,
   ref,
-  shallowRef,
   watch,
 } from 'vue-demi'
 import { getOrCreateModel } from '../utils'
@@ -26,8 +25,14 @@ export default defineComponent({
   }>,
   setup(props, ctx) {
     const { emit } = ctx
-    const editorRef = shallowRef<Editor.IStandaloneCodeEditor | null>(null)
-    const { render, containerRef, monacoRef, unload, whenMonacoIsReady } = useEditor(props, ctx, editorRef, 'vue-monaco-editor')
+    const {
+      render,
+      containerRef,
+      editorRef,
+      monacoRef,
+      unload,
+      whenMonacoIsReady,
+    } = useEditor<Editor.IStandaloneCodeEditor>(props, ctx, 'vue-monaco-editor')
 
     const { disposeValidator } = useValidator(emit, monacoRef, editorRef)
     const preventTriggerChangeEvent = ref<boolean>(false)

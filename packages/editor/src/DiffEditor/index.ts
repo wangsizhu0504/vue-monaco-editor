@@ -1,12 +1,5 @@
 import type { SlotsType } from 'vue-demi'
-import {
-  defineComponent,
-  nextTick,
-  onMounted,
-  onUnmounted,
-  shallowRef,
-  watch,
-} from 'vue-demi'
+import { defineComponent, nextTick, onMounted, onUnmounted, watch } from 'vue-demi'
 import { getOrCreateModel } from '../utils'
 import type { Editor } from '../types'
 import { useEditor } from '../hooks/useEditor'
@@ -22,8 +15,7 @@ export default defineComponent({
   setup(props, ctx) {
     const { emit } = ctx
 
-    const editorRef = shallowRef<Editor.IStandaloneDiffEditor | null>(null)
-    const { render, monacoRef, containerRef, unload, whenMonacoIsReady } = useEditor(props, ctx, editorRef, 'vue-monaco-diff-editor')
+    const { render, monacoRef, containerRef, editorRef, unload, whenMonacoIsReady } = useEditor<Editor.IStandaloneDiffEditor>(props, ctx, 'vue-monaco-diff-editor')
 
     // originalModelPath
     watch(

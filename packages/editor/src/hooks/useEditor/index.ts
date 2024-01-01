@@ -1,17 +1,26 @@
-import type { SetupContext, ShallowRef, WatchCallback } from 'vue-demi'
+import type { SetupContext, ShallowRef, VNode, WatchCallback } from 'vue-demi'
 import { computed, h, shallowRef, watch } from 'vue-demi'
 import { useStyle } from '../useStyle'
 import { useMonaco } from '../useMonaco'
-import type { DiffEditorProps, EditorEmitsOptions, EditorProps } from '../../types'
+import type { DiffEditorProps, EditorEmitsOptions, EditorProps, Monaco } from '../../types'
 import { getSlotHelper } from '../../utils'
 
-export function useEditor(
+export interface useEditorReturn<T = any> {
+  render: () => VNode,
+  monacoRef: ShallowRef<Monaco | null>,
+  containerRef: ShallowRef<HTMLDivElement | null>,
+  editorRef: ShallowRef<T | null>,
+  unload: () => void,
+  whenMonacoIsReady: <V = any, OV = any>(callback: WatchCallback<V, OV>) => (...args: any[]) => void,
+}
+
+export function useEditor<T = any>(
   props: EditorProps | DiffEditorProps,
   ctx: SetupContext<EditorEmitsOptions>,
-  editorRef: ShallowRef,
   key: string,
-) {
+): useEditorReturn<T> {
   const { monacoRef, unload } = useMonaco()
+  const editorRef = shallowRef<T | null>(null)
   const containerRef = shallowRef<HTMLDivElement | null>(null)
   const isEditorReady = computed(() => !!monacoRef.value && !!editorRef.value)
 
@@ -66,5 +75,5 @@ export function useEditor(
     )
   }
 
-  return { render, monacoRef, containerRef, unload, whenMonacoIsReady }
+  return { render, monacoRef, containerRef, editorRef, unload, whenMonacoIsReady }
 }

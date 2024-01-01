@@ -1,4 +1,4 @@
-import loader from 'monaco-editor-loader'
+import loader from '@vue-monaco/loader'
 
 export { loader }
 

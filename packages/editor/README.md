@@ -1,2 +1,2 @@
-# vue-monaco-editor
+# @vue-monaco/editor
 Monaco Editor for vue.

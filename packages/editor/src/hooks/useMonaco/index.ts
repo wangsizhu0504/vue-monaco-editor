@@ -1,5 +1,5 @@
 import { onMounted, shallowRef } from 'vue-demi'
-import loader from 'monaco-editor-loader'
+import loader from '@vue-monaco/loader'
 import type { Monaco } from '../../types'
 
 export function useMonaco() {
