@@ -1,7 +1,7 @@
 {
   "name": "@vue-monaco/editor",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "packageManager": "pnpm@8.6.12",
   "description": "Monaco Editor for Vue - use the monaco-editor in Vue2/3 without needing to use plugins",
   "license": "MIT",

@@ -1,7 +1,7 @@
 {
   "name": "@vue-monaco/loader",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "the library aims to setup monaco editor into your browser",
   "license": "MIT",
   "keywords": [
