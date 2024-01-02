@@ -99,7 +99,6 @@ export default defineComponent({
     )
 
     const createEditor = () => {
-      console.log(!containerRef.value, !monacoRef.value, editorRef.value)
       if (!containerRef.value || !monacoRef.value || editorRef.value) return
 
       emit('beforeMount', monacoRef.value)
@@ -148,7 +147,6 @@ export default defineComponent({
       const stop = watch(
         () => monacoRef.value,
         (newMonacoRef) => {
-          console.log('containerRef', containerRef.value, newMonacoRef)
           if (containerRef.value && newMonacoRef) {
             nextTick(() => stop())
             createEditor()
