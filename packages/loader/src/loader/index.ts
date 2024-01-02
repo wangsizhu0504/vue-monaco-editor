@@ -6,14 +6,11 @@
  * into your browser by using its `loader` script
  */
 
-import type * as monacoEditor from 'monaco-editor/esm/vs/editor/editor.api'
 import defaultConfig from '../config'
 import { validators } from '../validators'
 import { compose, deepMerge, makeCancelable } from '../utils'
 import { createState } from '../state'
-import type { CancelablePromise } from '../type'
-
-type Monaco = typeof monacoEditor
+import type { CancelablePromise, Monaco } from '../type'
 
 /** the local state of the module */
 const [getState, setState] = createState({
