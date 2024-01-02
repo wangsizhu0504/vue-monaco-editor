@@ -3,7 +3,11 @@
   "type": "module",
   "version": "0.0.2",
   "packageManager": "pnpm@8.6.12",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "Monaco Editor for Vue - use the monaco-editor in Vue2/3 without needing to use plugins",
+  "author": "Kriszu <wangsizhu0504@outlook.com>",
   "license": "MIT",
   "homepage": "https://github.com/wangsizhu0504/vue-monaco-editor#readme",
   "repository": {
@@ -41,6 +45,7 @@
   },
   "files": [
     "LICENSE",
+    "README.md",
     "dist"
   ],
   "scripts": {
