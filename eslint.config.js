@@ -6,5 +6,6 @@ export default kriszu({
     'no-restricted-globals': 'off',
     'ts/consistent-type-assertions': 'off',
     'jsdoc/no-multi-asterisks': 'off',
+    'new-cap': 'off',
   },
 })
