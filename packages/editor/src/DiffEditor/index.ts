@@ -11,6 +11,7 @@ export default defineComponent({
   slots: Object as SlotsType<{
     default: any,
     loading: any,
+    failure: any,
   }>,
   setup(props, ctx) {
     const { emit } = ctx

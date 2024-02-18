@@ -1,9 +1,10 @@
-import { onMounted, shallowRef } from 'vue-demi'
+import { onMounted, ref, shallowRef } from 'vue-demi'
 import loader from '@vue-monaco/loader'
 import type { Monaco } from '../../types'
 
 export function useMonaco() {
   const monacoRef = shallowRef<Monaco | null>(loader.getMonacoInstance())
+  const isLoadFailed = ref<boolean>(false)
 
   let cancelable: ReturnType<(typeof loader)['init']>
 
@@ -15,8 +16,12 @@ export function useMonaco() {
       cancelable = loader.init()
       monacoRef.value = await cancelable
     } catch (error: any) {
-      if (error?.type !== 'cancelation')
+      if (error?.type !== 'cancelation') {
+        isLoadFailed.value = true
         console.error('Monaco initialization error:', error)
+      } else {
+        isLoadFailed.value = false
+      }
     }
   })
 
@@ -26,5 +31,6 @@ export function useMonaco() {
   return {
     monacoRef,
     unload,
+    isLoadFailed,
   }
 }

@@ -115,6 +115,7 @@ npm i @vue-monaco/editor @vue/composition-api
 | onChange | `(value: string \| undefined, monaco.editor.IModelContentChangedEvent) => void) => void` |  | 编辑改变值后执行 |  |
 | onValidate | `(markers: monaco.editor.IMarker[]) => void` |  | 当语法发生错误时执行 | `monaco-editor` 支持语法校验的语言[查看此处](https://github.com/microsoft/monaco-editor/tree/main/src/basic-languages) |
 | `#loading` | `slot` | `'loading...'` | 加载状态 |  |
+| `#failure` | `slot` | `'load failed'` | 加载失败状态 |
 
 ### Diff Editor
 
@@ -135,6 +136,7 @@ npm i @vue-monaco/editor @vue/composition-api
 | onBeforeMount | `(monaco: Monaco) => void` |  | 编辑器实例创建前执行 |
 | onMount | `(editor: monaco.editor.IStandaloneDiffEditor, monaco: Monaco) => void` |  | 编辑器实例创建后执行 |
 | `#loading` | `slot` | `'loading...'` | 加载状态 |
+| `#failure` | `slot` | `'load failed'` | 加载失败状态 |
 
 ### Vite
 

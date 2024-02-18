@@ -116,6 +116,7 @@ npm i @vue-monaco/editor @vue/composition-api
 | onChange | `(value: string \| undefined, event: monaco.editor.IModelContentChangedEvent) => void` |  | execute when  the changed value change |  |
 | onValidate | `(markers: monaco.editor.IMarker[]) => void` |  | execute when a syntax error occurs | `monaco-editor` supports syntax-checked languages [view here](https://github.com/microsoft/monaco-editor/tree/main/src/basic-languages) |
 | `#loading` | `slot` | `'loading...'` | loading status | when loading files from CDN, displaying the loading status will be more friendly |
+| `#failure` | `slot` | `'load failed'` | failure status | example: CDN network error |
 
 ### Diff Editor
 
@@ -136,6 +137,7 @@ npm i @vue-monaco/editor @vue/composition-api
 | onBeforeMount | `(monaco: Monaco) => void` |  | Execute before the editor instance is created |
 | onMount | `(editor: monaco.editor.IStandaloneDiffEditor, monaco: Monaco) => void` |  | Execute after the editor instance has been created |
 | `#loading` | `slot` | `'loading...'` | Loading status |
+| `#failure` | `slot` | `'load failed'` | failure status | example: CDN network error |
 
 ### Vite
 

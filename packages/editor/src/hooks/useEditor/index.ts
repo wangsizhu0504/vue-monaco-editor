@@ -19,7 +19,7 @@ export function useEditor<T = any>(
   ctx: SetupContext<EditorEmitsOptions>,
   key: string,
 ): useEditorReturn<T> {
-  const { monacoRef, unload } = useMonaco()
+  const { monacoRef, unload, isLoadFailed } = useMonaco()
   const editorRef = shallowRef<T | null>(null)
   const containerRef = shallowRef<HTMLDivElement | null>(null)
   const isEditorReady = computed(() => !!monacoRef.value && !!editorRef.value)
@@ -63,7 +63,13 @@ export function useEditor<T = any>(
             {
               style: getLoadingStyle.value,
             },
-            ctx.slots?.loading ? getSlotHelper(ctx.slots?.loading) : 'loading...',
+            isLoadFailed.value
+              ? ctx.slots.failure
+                ? getSlotHelper(ctx.slots?.failure)
+                : 'load failed'
+              : ctx.slots?.loading
+                ? getSlotHelper(ctx.slots?.loading)
+                : 'loading...',
           ),
         h('div', {
           ref: containerRef,

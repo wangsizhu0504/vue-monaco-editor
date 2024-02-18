@@ -21,6 +21,7 @@ export default defineComponent({
   emits: ['update:value', 'beforeMount', 'mount', 'change', 'validate'],
   slots: Object as SlotsType<{
     loading: any,
+    failure: any,
     default: any
   }>,
   setup(props, ctx) {
