@@ -1,7 +1,7 @@
 {
   "name": "@vue-monaco/loader",
   "type": "module",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "the library aims to setup monaco editor into your browser",
   "author": "Kriszu <wangsizhu0504@outlook.com>",
   "publishConfig": {
