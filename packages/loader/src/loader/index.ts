@@ -27,7 +27,15 @@ const wrapperPromise = new Promise((resolve, reject) => setState({ resolve, reje
  * set the loader configuration
  * @param {object} globalConfig - the configuration object
  */
-function config(globalConfig: Record<string, any>) {
+function config(globalConfig: {
+  paths?: {
+    vs?: string,
+  },
+  'vs/nls'?: {
+    availableLanguages?: Record<string, unknown>,
+  },
+  monaco?: Monaco,
+}) {
   const { monaco, ...otherConfig } = validators.config(globalConfig)
 
   setState(_state => ({
