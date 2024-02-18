@@ -1,7 +1,7 @@
 {
   "name": "my-vue-app",
   "type": "module",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "private": true,
   "scripts": {
     "dev": "vite",
