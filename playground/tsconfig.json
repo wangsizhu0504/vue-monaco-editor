@@ -1,0 +1,32 @@
+{
+
+  "compilerOptions": {
+    "target": "esnext",
+    "jsx": "preserve",
+    "lib": [
+      "esnext",
+      "dom"
+    ],
+    "useDefineForClassFields": true,
+    "baseUrl": ".",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "paths": {
+      "@vue-monaco/editor": [
+        "../editor/src"
+      ]
+    },
+    "resolveJsonModule": true,
+    "types": [
+      "vite/client"
+    ],
+    "strict": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "skipLibCheck": true
+  },
+  "include": [
+    "src"
+  ]
+}

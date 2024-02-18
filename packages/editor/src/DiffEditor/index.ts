@@ -6,12 +6,12 @@ import { useEditor } from '../hooks/useEditor'
 import { diffEditorProps } from './props'
 
 export default defineComponent({
-  name: 'DiffEditor',
+  name: 'MonacoDiffEditor',
   props: diffEditorProps,
   slots: Object as SlotsType<{
     default: any,
-    loading: any,
     failure: any,
+    loading: any,
   }>,
   setup(props, ctx) {
     const { emit } = ctx

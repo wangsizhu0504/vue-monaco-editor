@@ -16,13 +16,13 @@ import { editorProps } from './props'
 const viewStates = new Map<string | undefined, Editor.ICodeEditorViewState | null>()
 
 export default defineComponent({
-  name: 'Editor',
+  name: 'MonacoEditor',
   props: editorProps,
   emits: ['update:value', 'beforeMount', 'mount', 'change', 'validate'],
   slots: Object as SlotsType<{
-    loading: any,
-    failure: any,
     default: any
+    failure: any,
+    loading: any,
   }>,
   setup(props, ctx) {
     const { emit } = ctx
